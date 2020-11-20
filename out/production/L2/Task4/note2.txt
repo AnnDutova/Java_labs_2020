@@ -1,0 +1,2 @@
+Line  with     extra   spaces.
+Second line     with   tab.
