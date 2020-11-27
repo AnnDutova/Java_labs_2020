@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
-    public static final String FILE_NAME ="D:\\IDEA\\IntelliJ IDEA Community Edition 2020.2.2\\unnecessary_proj\\L2\\src\\Task4\\note2.txt";
+    public static final String FILE_NAME ="./src/Task4/note2.txt";
     public static void main (String[] args) throws Exception
     {
         try (BufferedReader reader = new BufferedReader(

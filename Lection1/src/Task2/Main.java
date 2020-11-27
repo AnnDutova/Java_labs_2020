@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class Main {
-    public static final String FILE_NAME ="D:\\IDEA\\IntelliJ IDEA Community Edition 2020.2.2\\unnecessary_proj\\L2\\src\\Task2\\note.txt";
+    public static final String FILE_NAME ="./src/Task2/note.txt";
     public static final String PAS = "Password: ";
     public static void main (String[] args) throws Exception
     {

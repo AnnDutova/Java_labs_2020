@@ -1,8 +1,5 @@
 package Task5;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main {
 
     public static void print(Integer[][] a, int N, int M)
@@ -54,8 +51,8 @@ public class Main {
 
             createRandomMas(arr, n, m);
 
-            HashMap<Integer, Integer[]> map = new HashMap<>();
             int min = Integer.MAX_VALUE;
+            Integer[][] arrMax = new Integer[n][m+1];
 
             for (int i = 0; i < n; i++)
             {
@@ -64,36 +61,41 @@ public class Main {
                 {
                     min = max;
                 }
-                map.put(max, arr[i]);
+                arrMax[i][0]=max;
+                for (int j = 1; j < m+1; j++)
+                {
+                    arrMax[i][j] = arr[i][j-1];
+                }
             }
 
             print(arr, n, m);
 
             System.out.println();
 
-            for (Map.Entry<Integer, Integer[]> pair : map.entrySet())
-            {
-                System.out.println();
-                System.out.println(pair.getKey() + " : ");
-                for (Integer el : pair.getValue())
-                {
-                    System.out.print(el + ", ");
-                }
-            }
+            print(arrMax, n, m+1);
 
-            map.remove(min);
             System.out.println();
-            System.out.print("Answer");
 
-            for (Map.Entry<Integer, Integer[]> pair : map.entrySet())
+            Integer[][] arrAnswer = new Integer[n-1][m];
+            boolean found = false;
+            int k=-1;
+            for (int i=0; i<n; i++)
             {
-                System.out.println();
-                System.out.println(pair.getKey() + " : ");
-                for (Integer el : pair.getValue())
+                if (arrMax[i][0] == min && !found)
                 {
-                    System.out.print(el + ", ");
+                    found = true;
+                    i++;
+                }
+                k++;
+
+                for (int j=0; j<m; j++)
+                {
+                    arrAnswer[k][j] = arr[i][j];
                 }
             }
+
+            print(arrAnswer, n-1, m);
+
         }
         catch(Exception ex)
         {
